@@ -1,25 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Controls from './Controls' ;
+import Screen from './Screen'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={stylesObj}>
+      <Screen  ></Screen>
+      <Controls/>
     </div>
   );
 }
+const stylesObj ={
+  width: "300px",
+  height: 500 ,
+  position:"fixed",
+  left: "50%",
+  top :"50%",
+  transform:"translate(-50%,-50%)" ,
+  backgroundColor:"gray",
+  paddingLeft :"15px",
+  paddingRight :"15px",
+  paddingTop : "30px",
+  borderRadius : "35px"
 
+}
 export default App;
