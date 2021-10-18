@@ -1,5 +1,5 @@
 import React from "react";
-import mp from "./mp.png"
+import mp from "./assets/mp.png"
 class MusicPlayer extends React.Component {
    render()
    {

@@ -1,5 +1,5 @@
-import ff1 from "./ff1.svg";
-import pp from "./pp.png";
+import ff1 from "./assets/ff1.svg";
+import pp from "./assets/pp.png";
 import zingTouch from "zingtouch";
 import React from "react";
 import { render } from "@testing-library/react";

@@ -1,5 +1,5 @@
 import React from "react";
-import Dice_Picture from "./Dice_Picture.png"
+import Dice_Picture from "./assets/Dice_Picture.png"
 class Games extends React.Component {
    render()
    {

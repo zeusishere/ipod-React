@@ -1,5 +1,5 @@
 import React from "react";
-import bg from "./bg.jpg";
+import bg from "./assets/bg.jpg";
 import Menu from "./Menu";
 import Setting from "./settings"
 import Games from "./games"
