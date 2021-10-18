@@ -2,21 +2,21 @@ import React from "react";
 
 class Music_subMenu extends React.Component {
     componentDidMount() {
-        console.log("Music subMenu",this.props)
+        // the code below sets an item in the list to active when component loads using state of app component
         let activeElement = document.querySelector(`#item${this.props.state.currentPositionCursor}`);
-        console.log(activeElement);
         activeElement.classList.add("active");
     }
     componentDidUpdate(prevProps) {
-        // console.log(this.props.state.currentPositionCursor) ;
+        // the code below sets an item in the list to active when component updates using state of app component
         let activeElement = document.querySelector(`#item${this.props.state.currentPositionCursor}`);
+        // removes active class from previous active list item in the list when component updates
         document.querySelector(`#item${prevProps.state.currentPositionCursor}`).classList.remove("active")
+        // adds active class  to current list item
         activeElement.classList.add("active");
 
     }
    render()
    {
-    console.log("props inside of MM ", this.props);
     return(
         <div style = { styles } >
             <h1>Music</h1>
@@ -32,17 +32,7 @@ class Music_subMenu extends React.Component {
     }
 }
 
-// const styles = {
-//     width: "48%",
-//     backgroundColor: "white",
-//     height: "100%",
-//     paddingTop: "16px",
-//     boxSizing: "border-box",
-//     paddingBottom: "16px",
-// }
-// const liStyle= {
-//     paddingLeft:"20px" 
-// }
+
 const styles ={
     width:"48%" ,
     backgroundColor:"white",

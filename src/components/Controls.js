@@ -5,47 +5,40 @@ import React from "react";
 import { render } from "@testing-library/react";
 class Controls extends React.Component {
     componentDidMount() {
-        // set the initial position of cursor
+        // set the initial position of cursor i.e active list item on screen .
+        // handles movement of cursor.active list item  on screen
         let { moveCursor } = this.props;
         let controller = document.getElementById("controller");
         var controllerRegion = new zingTouch.Region(controller);
         let currentAngPos = 0;
         let previousAngPos = 0;
-
         controllerRegion.bind(controller, "rotate", function (e) {
-
-            // console.log("rotated in",e.detail.angle)
+            // get current angle  of gesture
             currentAngPos = e.detail.angle;
+            // if - else if block below compares the change in angle to move up or down the
+            //  list .
             if (currentAngPos - previousAngPos > 15) {
-                console.log(previousAngPos, "rotated", currentAngPos)
                 previousAngPos = currentAngPos;
-
-                //    changeState       
+                // calling fn from props to move up in the list  
                 moveCursor(1);
             }
             else if (currentAngPos - previousAngPos < -15) {
                 previousAngPos = currentAngPos;
-                // changeState
+                // calling fn from props to move down in the list
                 moveCursor(-1);
 
             }
         })
-        let circularDisc = document.getElementById("circularDisc");
-
-        console.log(circularDisc)
-        controllerRegion.unbind(circularDisc)
-
-
-
     }
     componentDidUpdate() {
 
     }
     render() {
-        console.log("props in controller", this.props);
         return <React.Fragment>
+            {/* this div acts as region of interest for listening to rotate gestures */}
             <div style={styles} id="controller" >
             </div>
+            {/* the indivdual components below act as button and are positioned over #controller div mentioned above */}
             <div style={circularDisc} id="circularDisc"
                 className="pressed"
                 onClick={() => {

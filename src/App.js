@@ -8,11 +8,13 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
+      // controls what component is visible on the screen
       visible: "",
+      // position of cursor/active list-item in current list 
       currentPositionCursor :3 ,
+      // position of cursor/active list-item of previous list which was used to open current list . it is used when we move back to outer menu ,the list-item is highlighted
       previousPositionCursor :1 ,
-      listLength :0 ,
-      active : "",
+      // below arrays are used to set value of visible in stae while traversing through UI
       menu : ["","coverflow","music","games","setting" ] ,
       music :["","musicPlayer","songs","playList","artist"]
     }
@@ -20,24 +22,21 @@ class App extends React.Component {
     this.changeMenuVisibility = this.changeMenuVisibility.bind(this);
     this.changeList = this.changeList.bind(this) ;
   }
-
-//
-
-// this function controls if menu is visible on screen and also move from sub-list to main list
+// this function helps us move from current-list to previous outer list 
 changeMenuVisibility(elementToDisplay)
 {
-  console.log("inside change menu visibility ", this.state.visible, elementToDisplay) ;
-
+  // toggles visibility of outermost menu
   if (this.state.visible === "menu" || this.state.visible === "")
       this.setState((prevState) => {
         return {  visible: ("" == prevState.visible) ? "menu" : "" ,
         currentPositionCursor:1}
       });
+      // helps us get back to previous menu from current menu
   else if (this.state.visible=="musicPlayer" ||this.state.visible =="artist" ||this.state.visible =="playList" ||this.state.visible =="songs" )  
   {
     this.setState((prevState) => {
-      return {  visible:"music" ,
-        currentPositionCursor:prevState.previousPositionCursor
+      return {  visible:"music" 
+        // , currentPositionCursor:prevState.previousPositionCursor
     }
     });
   }  
@@ -50,9 +49,8 @@ changeMenuVisibility(elementToDisplay)
 }
 //  open sublists from current list
 changeList (elementToDisplay )
-{
-  console.log("inside changeList ",this.state.menu,this.state.currentPositionCursor)
-  
+{ 
+  // open  a sublist from "menu" list
   if (this.state.visible == "menu")
   this.setState((prevState) => {
     
@@ -61,12 +59,13 @@ changeList (elementToDisplay )
              currentPositionCursor : 1
     } 
   });
+   // open  a sublist from "music" list
   if  (this.state.visible == "music")
   {
     this.setState((prevState) => {
     
       return { visible:prevState.music[this.state.currentPositionCursor] ,
-               previousPositionCursor: prevState.currentPositionCursor ,
+              //  previousPositionCursor: prevState.currentPositionCursor ,
       } 
     });
   }
@@ -84,7 +83,6 @@ moveCursor = (direction) =>
   else
   {
     this.setState((prevState) => {
-      // return { menuVisible :!prevState.menuVisible , visible:elementToDisplay }
       return { currentPositionCursor : (prevState.currentPositionCursor==1)?4:prevState.currentPositionCursor-1} ;
     }) ;
 }
@@ -96,7 +94,6 @@ render()
     <div style={stylesObj}>
       <Screen state={this.state} setVisible={this.changeMenuVisibility} setListToDisplay={this.changeList}  />
       <Controls state={this.state} setVisible={this.changeMenuVisibility} setListToDisplay={this.changeList} moveCursor={this.moveCursor}  />
-      {/* <img src={reflection} style={imgStyles}></img> */}
     </div>
   );
 }
@@ -109,7 +106,6 @@ const stylesObj = {
   top: "50%",
   transform: "translate(-50%,-50%)",
   backgroundColor: "#C1C1C1",
-  // backgroundImage :`url(${texture})`,
   backgroundSize:"161%",
   paddingLeft: "15px",
   paddingRight: "15px",

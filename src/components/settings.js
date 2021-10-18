@@ -2,21 +2,20 @@ import React from "react";
 
 class Setting extends React.Component {
     componentDidMount() {
-        console.log("settings",this.props)
+    // the code below sets an item in the list to active when component loads using state of app
         let activeElement = document.querySelector(`#item${this.props.state.currentPositionCursor}`);
         console.log(activeElement);
         activeElement.classList.add("active");
     }
     componentDidUpdate(prevProps) {
-        // console.log(this.props.state.currentPositionCursor) ;
+        // the code below sets an item in the list to active when component updates using state of app component
         let activeElement = document.querySelector(`#item${this.props.state.currentPositionCursor}`);
+        // removes active class from previous active list item in the list when component updates
         document.querySelector(`#item${prevProps.state.currentPositionCursor}`).classList.remove("active")
         activeElement.classList.add("active");
-
     }
    render()
    {
-    console.log("props inside of settings ", this.props);
     return(
         <div style = { styles } >
             <h1>Settings</h1>
@@ -31,18 +30,6 @@ class Setting extends React.Component {
     );
     }
 }
-
-// const styles = {
-//     width: "48%",
-//     backgroundColor: "white",
-//     height: "100%",
-//     paddingTop: "16px",
-//     boxSizing: "border-box",
-//     paddingBottom: "16px",
-// }
-// const liStyle= {
-//     paddingLeft:"20px" 
-// }
 const styles ={
     width:"48%" ,
     backgroundColor:"white",

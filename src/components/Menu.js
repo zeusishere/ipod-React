@@ -19,59 +19,53 @@ const liStyle= {
 } ;
 class MainMenu extends React.Component
 {
-    // console.log("props in menus is ",props, props.state.visible) ;
-    
-    // console.log("props inside of MM ",props) ;
     componentDidMount()
     {
-        console.log(this.props)
+        // the code below sets an item in the list to active when component loads using state of app component
         let activeElement = document.querySelector(`#item${this.props.state.currentPositionCursor}`) ;
-         console.log(activeElement) ;
-  
          activeElement.classList.add("active") ;
     }
     componentDidUpdate(prevProps)
     {
-        // console.log(this.props.state.currentPositionCursor) ;
-        
+        // the code below sets an item in the list to active when component updates using state of app component
         let activeElement = document.querySelector(`#item${this.props.state.currentPositionCursor}`) ;
-        
-      
-                document.querySelector(`#item${prevProps.state.currentPositionCursor}`).classList.remove("active")
-                activeElement.classList.add("active") ;
-            
+        // removes active class from previous active list item in the list when component updates
+        document.querySelector(`#item${prevProps.state.currentPositionCursor}`).classList.remove("active")
+        // adds active class  to current list item
+        activeElement.classList.add("active") ;        
     }
     render()
-{    
+    {    
    
-    return (
-        <div style={styles} >
-            <h1>iPod.js</h1>
-                    <ul id="list"  style={ {listStyleType:'none',
-                                paddingLeft:"0px" }}>
-                        <li id="item1" style={liStyle}
-                            data-active = "music"  
-                            
+        return (
+            <div style={styles} >
+                <h1>iPod.js</h1>
+                        <ul id="list"  style={ {listStyleType:'none',
+                                    paddingLeft:"0px" }}>
+                            <li id="item1" style={liStyle}
+                                data-active = "music"  
                             >
-                            CV
-                        </li>
-                        <li id="item2" style={liStyle}
-                        onClick={ () =>{this.props.setListToDisplay("music")} }
-                        >Music</li>
-                        <li id="item3"style={liStyle}
-                        onClick={ () =>{this.props.setListToDisplay("games")} }
-                        >
-                            games
-                        </li>
-                        <li id="item4" style={liStyle}
-                            onClick={ () =>{this.props.setListToDisplay("setting")} }>
-                            setting
-                        </li>
-                    </ul>
-        </div>
-    ) ;
+                                CV
+                            </li>
+                            <li id="item2" style={liStyle}
+                            onClick={ () =>{this.props.setListToDisplay("music")} }
+                            >
+                                Music
+                            </li>
+                            <li id="item3"style={liStyle}
+                            onClick={ () =>{this.props.setListToDisplay("games")} }
+                            >
+                                games
+                            </li>
+                            <li id="item4" style={liStyle}
+                                onClick={ () =>{this.props.setListToDisplay("setting")} }>
+                                setting
+                            </li>
+                        </ul>
+            </div>
+        ) ;
     
-}
+    }
 }
 
 
