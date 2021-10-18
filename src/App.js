@@ -70,15 +70,6 @@ changeList (elementToDisplay )
       } 
     });
   }
-  // else{
-  //   this.setState((prevState) => {
-    
-  //     return { visible:prevState.music[this.state.currentPositionCursor] ,
-  //              previousPositionCursor: prevState.currentPositionCursor ,
-  //     } 
-  //   });
-
-  // }
 }
 //  move the cursor up and down in the current list
 moveCursor = (direction) =>
@@ -125,13 +116,8 @@ const stylesObj = {
   paddingTop: "30px",
   borderRadius: "35px",
   boxShadow: "0px 0px 20px 1px inset rgba(0,0,0,0.6)",
-  "-webkit-box-reflect": "below 0px linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.4))"
+  "-webkit-box-reflect": "below 4px linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.4))"
 
 }
-// let imgStyles = {
-//   transform:"rotate(180deg)",
-//   width:"340px",
-//   position : "relative",
-//   left :
-// }
+
 export default App;
