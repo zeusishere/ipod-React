@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/ipod-React/static/css/main.2575dce6.chunk.css",
+    "main.js": "/ipod-React/static/js/main.956b053c.chunk.js",
+    "main.js.map": "/ipod-React/static/js/main.956b053c.chunk.js.map",
+    "runtime-main.js": "/ipod-React/static/js/runtime-main.8d7d94e7.js",
+    "runtime-main.js.map": "/ipod-React/static/js/runtime-main.8d7d94e7.js.map",
+    "static/js/2.e1f405b8.chunk.js": "/ipod-React/static/js/2.e1f405b8.chunk.js",
+    "static/js/2.e1f405b8.chunk.js.map": "/ipod-React/static/js/2.e1f405b8.chunk.js.map",
+    "static/js/3.f866fc55.chunk.js": "/ipod-React/static/js/3.f866fc55.chunk.js",
+    "static/js/3.f866fc55.chunk.js.map": "/ipod-React/static/js/3.f866fc55.chunk.js.map",
+    "index.html": "/ipod-React/index.html",
+    "static/css/main.2575dce6.chunk.css.map": "/ipod-React/static/css/main.2575dce6.chunk.css.map",
+    "static/js/2.e1f405b8.chunk.js.LICENSE.txt": "/ipod-React/static/js/2.e1f405b8.chunk.js.LICENSE.txt",
+    "static/media/Dice_Picture.cc3e571c.png": "/ipod-React/static/media/Dice_Picture.cc3e571c.png",
+    "static/media/bg.ed10788c.jpg": "/ipod-React/static/media/bg.ed10788c.jpg",
+    "static/media/ff1.22a5e050.svg": "/ipod-React/static/media/ff1.22a5e050.svg",
+    "static/media/mp.54bdd804.png": "/ipod-React/static/media/mp.54bdd804.png",
+    "static/media/pp.516d9cfc.png": "/ipod-React/static/media/pp.516d9cfc.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8d7d94e7.js",
+    "static/js/2.e1f405b8.chunk.js",
+    "static/css/main.2575dce6.chunk.css",
+    "static/js/main.956b053c.chunk.js"
+  ]
+}
