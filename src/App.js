@@ -1,9 +1,8 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Controls from './components/Controls';
 import Screen from './components/Screen'
 import React from "react";
-import reflection from "./reflection.png"
 class App extends React.Component {
   constructor() {
     super();
